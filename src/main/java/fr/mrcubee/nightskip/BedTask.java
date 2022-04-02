@@ -20,10 +20,12 @@ public class BedTask extends BukkitRunnable {
 
     @Override
     public void run() {
-        int numberOfPlayer = Bukkit.getOnlinePlayers().size();
+        final int numberOfPlayer = Bukkit.getOnlinePlayers().size();
         int minPlayer = (20 * numberOfPlayer) / 100;
         long time;
 
+        if (minPlayer < 1)
+            minPlayer = 1;
         this.nightSkip.playersInBed.removeIf(player -> !player.isSleeping());
         if (numberOfPlayer < 2 || this.nightSkip.playersInBed.size() < minPlayer) {
             this.startSkipTime = -1;
