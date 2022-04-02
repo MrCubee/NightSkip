@@ -1,0 +1,6 @@
+name: ${project.name}
+description: ${project.description}
+website: ${project.url}
+version: ${plugin.version}
+authors: [${git.branch.authors}]
+main: fr.mrcubee.nightskip.NightSkip
